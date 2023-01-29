@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21279" systemVersion="21G115" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+    <entity name="IdentifiedItemData" representedClassName="IdentifiedItemData" syncable="YES" codeGenerationType="class">
+        <attribute name="confidence" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="identifier" attributeType="String" defaultValueString=""/>
+        <attribute name="isPinned" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="isReported" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="oid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="timestamp" attributeType="Date" defaultDateTimeInterval="694985220" usesScalarValueType="NO"/>
+        <relationship name="mediaItem" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MediaItemData" inverseName="identifiedItem" inverseEntity="MediaItemData"/>
+    </entity>
+    <entity name="MediaItemData" representedClassName="MediaItemData" syncable="YES" codeGenerationType="class">
+        <attribute name="data" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
+        <attribute name="oid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="timestamp" attributeType="Date" defaultDateTimeInterval="695048340" usesScalarValueType="NO"/>
+        <relationship name="identifiedItem" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="IdentifiedItemData" inverseName="mediaItem" inverseEntity="IdentifiedItemData"/>
+    </entity>
+    <entity name="MediaOptionsData" representedClassName="MediaOptionsData" syncable="YES" codeGenerationType="class">
+        <attribute name="isFavorite" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="mediaId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="oid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="rating" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="subTitle" optional="YES" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <attribute name="watchList" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+    </entity>
+</model>

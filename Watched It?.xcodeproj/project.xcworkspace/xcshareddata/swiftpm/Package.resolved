@@ -1,0 +1,68 @@
+{
+  "pins" : [
+    {
+      "identity" : "datastruct",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/TimmysApp/DataStruct",
+      "state" : {
+        "branch" : "master",
+        "revision" : "9ed9da9842c4ff39a45bad3780e7fd95edd4b2dc"
+      }
+    },
+    {
+      "identity" : "mediaui",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/TimmysApp/MediaUI",
+      "state" : {
+        "branch" : "master",
+        "revision" : "5e672fb69b3483b0973756c2f755ee41b203ca30"
+      }
+    },
+    {
+      "identity" : "networkui",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/TimmysApp/NetworkUI",
+      "state" : {
+        "branch" : "master",
+        "revision" : "8274131dfbdb80742f960b26832a6b69ae78c437"
+      }
+    },
+    {
+      "identity" : "scrollviewstyle",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/TimmysApp/ScrollViewStyle",
+      "state" : {
+        "revision" : "adc7413f6b32781dc5970c54d1a734cafa230ba7",
+        "version" : "1.0.0"
+      }
+    },
+    {
+      "identity" : "stools",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/TimmysApp/STools",
+      "state" : {
+        "revision" : "ea876036fc53be40f564b24d3c267b447416dc1d",
+        "version" : "1.0.81"
+      }
+    },
+    {
+      "identity" : "swiftui-introspect",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/siteline/SwiftUI-Introspect",
+      "state" : {
+        "revision" : "f2616860a41f9d9932da412a8978fec79c06fe24",
+        "version" : "0.1.4"
+      }
+    },
+    {
+      "identity" : "youtubeplayerkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SvenTiigi/YouTubePlayerKit",
+      "state" : {
+        "revision" : "40f9c331269a9b9461a5f7d4fd594865d9b4f62f",
+        "version" : "1.3.0"
+      }
+    }
+  ],
+  "version" : 2
+}
