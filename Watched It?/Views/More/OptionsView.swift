@@ -7,29 +7,31 @@
 
 import SwiftUI
 import MediaUI
+import DataStruct
 
 struct OptionsView: View {
     @Environment(\.dismiss) var dismiss
-    var url: URL?
-    var title: String
-    var tagline: String?
+    @State var config: OptionsViewConfig
+    init(media: MediaPreview?) {
+        _config = State(initialValue: OptionsViewConfig(media: media))
+    }
     var body: some View {
         VStack(spacing: 10) {
             HStack(alignment: .center) {
-                NetworkImage(url: url)
+                NetworkImage(url: config.media?.url)
                     .isResizable()
                     .frame(height: 40)
                     .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
                     .shadow(color: .darkShadow, radius: 6, y: 8)
                 VStack(alignment: .leading, spacing: 0) {
-                    Text(title)
+                    Text(config.media?.title ?? "")
                         .font(.callout)
                         .fontWeight(.semibold)
-                    Text(tagline ?? "")
+                    Text(config.media?.subTitle ?? "")
                         .foregroundColor(.gray)
                         .font(.caption2)
                         .fontWeight(.medium)
-                        .hidden(tagline?.isEmpty == true)
+                        .hidden(config.media?.subTitle?.isEmpty == true)
                 }
                 Spacer()
                 Button(action: {
@@ -45,11 +47,11 @@ struct OptionsView: View {
                 .fill(Color.gray)
                 .frame(height: 1)
             VStack(spacing: 10) {
-                OptionView(image: "bookmark", title: "Add to Watchlist", color: .tint) {
-                    
+                OptionView(image: config.options?.watchList ?? false ? "bookmark.fill": "bookmark", title: config.options?.watchList ?? false ? "Remove from Watchlist": "Add to Watchlist", color: .tint) {
+                    config.toggleWatchlist()
                 }
-                OptionView(image: "heart", title: "Add to favorites", color: .pink) {
-                    
+                OptionView(image: config.options?.isFavorite ?? false ? "heart.fill": "heart", title: config.options?.isFavorite ?? false ? "Remove from Favorites": "Add to Favorites", color: .pink) {
+                    config.toggleFavorite()
                 }
                 OptionView(image: "square.and.arrow.up.fill", title: "Share", color: .inverseBasic) {
                     
@@ -61,6 +63,9 @@ struct OptionsView: View {
         .background(Color.sheetBackground)
         .presentationDragIndicator(.visible)
         .presentationDetents([.height(250)])
+        .task {
+            config.fetch()
+        }
     }
 }
 

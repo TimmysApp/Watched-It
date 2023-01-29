@@ -23,7 +23,7 @@ class NetworkLayer: NetworkConfigurations {
         return decoder
     }
     func reprocess(url: URL?) -> URL? {
-        let route = URLRoute(from: URLQueryItem(name: "api_key", value: ""))
+        let route = URLRoute(from: URLQueryItem(name: "api_key", value: Constants.apiKey))
             .appending(URLQueryItem(name: "language", value: "en-US"))
         return route.applied(to: url)
     }

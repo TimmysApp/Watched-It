@@ -97,7 +97,7 @@ struct TVShowView: View {
                             Spacer()
                         }.padding(.top, -15)
                         HStack(spacing: 10) {
-                            RatingView(media: .tvShow(id: tvShow.id))
+                            RatingView(media: tvShow.preview)
                             NavigationLink(value: tvShow.id) {
                                 HStack {
                                     Text("Reviews")
@@ -183,7 +183,7 @@ struct TVShowView: View {
         .background(Color.background.gradient)
         .toolbar(.hidden, for: .navigationBar)
         .sheet(isPresented: $config.showingDetails) {
-            OptionsView(url: config.tvShow?.backdropPath?.large ?? config.tvShow?.posterPath?.medium, title: config.tvShow?.name ?? "", tagline: config.tvShow?.tagline)
+            OptionsView(media: config.tvShow?.preview)
         }.navigationDestination(for: Credits.self) { credits in
             CreditsDetailsView(credits: credits)
         }.navigationDestination(for: Int.self) { id in

@@ -94,7 +94,7 @@ struct MovieView: View {
                             Spacer()
                         }.padding(.top, -15)
                         HStack(spacing: 10) {
-                            RatingView(media: .movie(id: movie.id))
+                            RatingView(media: movie.preview)
                             Button(action: {
                             }) {
                                 HStack {
@@ -180,7 +180,7 @@ struct MovieView: View {
         }.bindNetwork()
         .background(Color.background.gradient).toolbar(.hidden, for: .navigationBar)
         .sheet(isPresented: $config.showingDetails) {
-            OptionsView(url: config.movie?.backdropPath?.large ?? config.movie?.posterPath?.medium, title: config.movie?.title ?? "", tagline: config.movie?.tagline)
+            OptionsView(media: config.movie?.preview)
         }.navigationDestination(for: Credits.self) { credits in
             CreditsDetailsView(credits: credits)
         }.navigationDestination(for: CreditsPreview.PreviewType.self) { item in

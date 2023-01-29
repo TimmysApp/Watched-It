@@ -34,6 +34,9 @@ struct Movie: Identifiable, Codable, Equatable {
     var voteAverage: Double
     var voteCount: Int
 //MARK: - Mappings
+    var preview: MediaPreview {
+        return MediaPreview(url: backdropPath?.large, title: title, popularity: popularity, subTitle: tagline, type: .movie(id: id))
+    }
     var duration: String? {
         guard let runtime else {return nil}
         let hours = runtime/60

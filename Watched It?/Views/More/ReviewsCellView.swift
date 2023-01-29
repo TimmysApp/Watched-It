@@ -24,7 +24,7 @@ struct ReviewCellView: View {
                         .background(Color.accentColor.opacity(0.3))
                         .clipShape(RoundedRectangle(cornerRadius: 9, style: .continuous))
                         .padding(.bottom, 5)
-                        RatingView(rating: review.authorDetails.rating ?? 0, media: .movie(id: 0))
+                        RatingView(rating: review.authorDetails.rating ?? 0)
                             .clipShape(ConfigurableRoundedRectangle(corners: [UIRectCorner.topLeft, .topRight], radius: 9))
                     }
                     HStack {

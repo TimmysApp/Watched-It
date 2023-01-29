@@ -15,4 +15,14 @@
         <attribute name="timestamp" attributeType="Date" defaultDateTimeInterval="695048340" usesScalarValueType="NO"/>
         <relationship name="identifiedItem" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="IdentifiedItemData" inverseName="mediaItem" inverseEntity="IdentifiedItemData"/>
     </entity>
+    <entity name="MediaOptionsData" representedClassName="MediaOptionsData" syncable="YES" codeGenerationType="class">
+        <attribute name="isFavorite" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="mediaId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="oid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="rating" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="subTitle" optional="YES" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <attribute name="watchList" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+    </entity>
 </model>

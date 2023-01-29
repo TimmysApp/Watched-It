@@ -55,6 +55,9 @@ struct TVShow: Identifiable, Codable, Equatable {
     var ageRating: String {
         return (adult ? "R": "PG") + " Rated"
     }
+    var preview: MediaPreview {
+        return MediaPreview(url: backdropPath?.large, title: name, popularity: popularity, subTitle: tagline, type: .tvShow(id: id))
+    }
 }
 
 struct NetworkChannel: Identifiable, Codable, Equatable {
