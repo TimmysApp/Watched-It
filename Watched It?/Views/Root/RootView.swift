@@ -10,6 +10,7 @@ import CoreData
 import NetworkUI
 
 struct RootView: View {
+    @Binding var link: MediaPreview.PreviewType?
     @State var config = RootViewConfig()
     var body: some View {
         TabView(selection: $config.selectedTab) {
@@ -21,12 +22,9 @@ struct RootView: View {
                     }.tag(tab)
             }
         }.accentColor(.tint)
-    }
-}
-
-struct RootView_Previews: PreviewProvider {
-    static var previews: some View {
-        RootView()
+        .fullScreenCover(item: $link) { item in
+            LinkView(link: item)
+        }
     }
 }
 

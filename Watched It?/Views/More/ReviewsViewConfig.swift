@@ -22,7 +22,7 @@ struct ReviewsViewConfig {
     @MainActor mutating func fetch() async {
         guard currentPage < totalPages else {return}
         do {
-            let route: EndPoint = type.type == .movie ? MovieRoute.reviews(id: type.id, page: currentPage): TVShowRoute.reviews(id: type.id)
+            let route: EndPoint = type.type == .movie ? MovieRoute.reviews(id: type.mediaId, page: currentPage): TVShowRoute.reviews(id: type.mediaId)
             let data = try await Network.request(for: route, model: PageableResponse<Review>.self)
             if currentPage == 1 {
                 reviews = data.results

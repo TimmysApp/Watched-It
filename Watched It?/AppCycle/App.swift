@@ -11,14 +11,15 @@ import NetworkUI
 
 @main
 struct WatchedIt: App {
+    @State var link: MediaPreview.PreviewType?
     init() {
        setUp()
     }
     var body: some Scene {
         WindowGroup {
-            RootView()
+            RootView(link: $link)
                 .environmentObject(NetworkData.shared)
-                .handleURL()
+                .handleURL($link)
         }
     }
 //MARK: - Functions

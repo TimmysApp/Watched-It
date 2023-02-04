@@ -19,7 +19,7 @@ struct OptionsViewConfig {
             options?.watchList.toggle()
             options?.update()
         }else {
-            let newOptions = MediaOptions(mediaId: media.type.id, isFavorite: false, watchList: true, name: media.title, type: media.type.type, subTitle: media.subTitle ?? "")
+            let newOptions = MediaOptions(mediaId: media.type.mediaId, isFavorite: false, watchList: true, name: media.title, type: media.type.type, subTitle: media.subTitle ?? "")
             newOptions.save()
             options = newOptions
         }
@@ -30,7 +30,7 @@ struct OptionsViewConfig {
             options?.isFavorite.toggle()
             options?.update()
         }else {
-            let newOptions = MediaOptions(mediaId: media.type.id, isFavorite: true, watchList: false, name: media.title, type: media.type.type, subTitle: media.subTitle ?? "")
+            let newOptions = MediaOptions(mediaId: media.type.mediaId, isFavorite: true, watchList: false, name: media.title, type: media.type.type, subTitle: media.subTitle ?? "")
             newOptions.save()
             options = newOptions
         }

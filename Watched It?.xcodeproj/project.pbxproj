@@ -168,6 +168,8 @@
 		191D2AE1296F352E0011021D /* DiscoverViewConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewConfig.swift; sourceTree = "<group>"; };
 		191D2AE3296F3CA90011021D /* DiscoverCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverCellView.swift; sourceTree = "<group>"; };
 		191D2AE5296F3D270011021D /* MediaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaView.swift; sourceTree = "<group>"; };
+		192639A0298E9DD100E6F68F /* Watched-It--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Watched-It--Info.plist"; sourceTree = SOURCE_ROOT; };
+		192639A1298E9E0300E6F68F /* Watched It?.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Watched It?.entitlements"; sourceTree = "<group>"; };
 		1948119F297801D100539F95 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		194811A129781A1600539F95 /* OptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsView.swift; sourceTree = "<group>"; };
 		1952D89D298682D600398216 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -478,6 +480,8 @@
 		1988D7D7296C9AF20078EE91 /* Watched It? */ = {
 			isa = PBXGroup;
 			children = (
+				192639A1298E9E0300E6F68F /* Watched It?.entitlements */,
+				192639A0298E9DD100E6F68F /* Watched-It--Info.plist */,
 				1988D7EC296C9AFA0078EE91 /* AppCycle */,
 				1988D7ED296C9B160078EE91 /* Views */,
 				1988D7E6296C9AF30078EE91 /* Info.plist */,
@@ -966,12 +970,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Watched It?/Watched It?.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Watched It?/Preview Content\"";
 				DEVELOPMENT_TEAM = R3X48TCM9D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Watched-It--Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Watched It?";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -1001,12 +1007,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Watched It?/Watched It?.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Watched It?/Preview Content\"";
 				DEVELOPMENT_TEAM = R3X48TCM9D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Watched-It--Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Watched It?";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
