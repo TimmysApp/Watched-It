@@ -16,22 +16,28 @@ struct DiscoverViewConfig {
     var isSearching = false
     var searchText = ""
 //MARK: - Functions
-    @MainActor mutating func fetch() async {
+    mutating func fetch() async {
         guard content.isEmpty else {return}
-        NetworkData.shared.isLoading = true
+        await MainActor.run {
+            NetworkData.shared.isLoading = true
+        }
         do {
             async let trendingMovies = Network.request(for: DiscoveryRoute.trending(page: 1, type: .movie, time: .day), model: PageableResponse<MediaDetails>.self, withLoader: false).results.map({$0.with(type: .movie).preview})
             async let trendingTvShows = Network.request(for: DiscoveryRoute.trending(page: 1, type: .tv, time: .day), model: PageableResponse<MediaDetails>.self, withLoader: false).results.map({$0.with(type: .tv).preview})
             async let popularMovies = Network.request(for: DiscoveryRoute.discover(page: 1, sorting: .popularityDescending, type: .movie), model: PageableResponse<MediaDetails>.self, withLoader: false).results.map({$0.with(type: .movie).preview})
             async let popularTvShows = Network.request(for: DiscoveryRoute.discover(page: 1, sorting: .popularityDescending, type: .tv), model: PageableResponse<MediaDetails>.self, withLoader: false).results.map({$0.with(type: .tv).preview})
             async let upcomingMovies = Network.request(for: MovieRoute.upcoming, model: PageableResponse<MediaDetails>.self, withLoader: false).results.map({$0.with(type: .movie).preview})
-            try await content.append(.trending(movies: trendingMovies, shows: trendingTvShows))
-            try await content.append(.popular(movies: popularMovies, shows: popularTvShows))
-            try await content.append(.upcoming(movies: upcomingMovies, shows: []))
-            NetworkData.shared.isLoading = false
+            let contents = try await [MediaPreview.Content.trending(movies: trendingMovies, shows: trendingTvShows), .popular(movies: popularMovies, shows: popularTvShows), .upcoming(movies: upcomingMovies, shows: [])]
+            await update(contents: contents)
         }catch {
-            NetworkData.shared.isLoading = false
+            await MainActor.run {
+                NetworkData.shared.isLoading = false
+            }
             print(error)
         }
+    }
+    @MainActor mutating func update(contents: [MediaPreview.Content]) async {
+        content.append(contentsOf: contents)
+        NetworkData.shared.isLoading = false
     }
 }

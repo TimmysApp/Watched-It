@@ -95,7 +95,7 @@ struct TVShowView: View {
                                     .shadow(color: .darkShadow, radius: 6)
                             }
                             Spacer()
-                        }.padding(.top, -15)
+                        }.padding(.top, -10)
                         HStack(spacing: 10) {
                             RatingView(media: tvShow.preview)
                             NavigationLink(value: tvShow.id) {

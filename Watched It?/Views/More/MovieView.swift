@@ -92,7 +92,7 @@ struct MovieView: View {
                                     .shadow(color: .darkShadow, radius: 6)
                             }
                             Spacer()
-                        }.padding(.top, -15)
+                        }.padding(.top, -10)
                         HStack(spacing: 10) {
                             RatingView(media: movie.preview)
                             Button(action: {
@@ -168,7 +168,7 @@ struct MovieView: View {
                                         Text("View All")
                                             .fontWeight(.semibold)
                                             .font(.caption)
-                                    }
+                                    }.hidden(credits.cast.count < 10)
                                 }
                             }
                         }
@@ -190,7 +190,7 @@ struct MovieView: View {
                 case .crew(let id):
                     PersonView(id: id)
             }
-        }.task {
+        }.task(priority: .background) {
             await config.fetch()
         }
     }

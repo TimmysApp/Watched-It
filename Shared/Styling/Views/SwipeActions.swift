@@ -70,7 +70,7 @@ public struct SwipeActionsViewModifer: ViewModifier {
                                 .clipShape(shape!)
                         }
                 }.highPriorityGesture(
-                    DragGesture()
+                    DragGesture(minimumDistance: 30, coordinateSpace: .local)
                         .onChanged { newValue in
                             guard !gesturePaused && isEnabled else {return}
                             if newValue.translation.width < 0 {

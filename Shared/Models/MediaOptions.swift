@@ -14,9 +14,9 @@ struct MediaOptions: Identifiable, Codable, Equatable {
     var isFavorite: Bool
     var watchList: Bool
     var name: String
-    var rating: Int?
+    var rating = 0
     var type: MediaType
-    var subTitle: String?
+    var subTitle = ""
 }
 
 //MARK: - Datable
@@ -27,6 +27,6 @@ extension MediaOptions: Datable {
         guard let object, let mediaType = MediaType(rawValue: object.type ?? "") else {
             return nil
         }
-        return MediaOptions(id: object.oid, mediaId: Int(object.mediaId), isFavorite: object.isFavorite, watchList: object.watchList, name: object.name ?? "", rating: Int(object.rating), type: mediaType, subTitle: object.subTitle)
+        return MediaOptions(id: object.oid, mediaId: Int(object.mediaId), isFavorite: object.isFavorite, watchList: object.watchList, name: object.name ?? "", rating: Int(object.rating), type: mediaType, subTitle: object.subTitle ?? "")
     }
 }
