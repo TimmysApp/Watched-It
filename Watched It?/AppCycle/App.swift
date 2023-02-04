@@ -18,6 +18,7 @@ struct WatchedIt: App {
         WindowGroup {
             RootView()
                 .environmentObject(NetworkData.shared)
+                .handleURL()
         }
     }
 //MARK: - Functions

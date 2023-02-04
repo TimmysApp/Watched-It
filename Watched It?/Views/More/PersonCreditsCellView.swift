@@ -27,7 +27,7 @@ struct PersonCreditsCellView: View {
                     Text(preview.title)
                         .foregroundColor(.inverseBasic)
                         .fontWeight(.semibold)
-                    if let subTitle = preview.subTitle {
+                    if let subTitle = preview.subTitle, !subTitle.isEmpty {
                         Text(subTitle)
                             .font(.caption)
                             .fontWeight(.medium)
