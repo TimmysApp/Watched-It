@@ -25,7 +25,7 @@ struct RatingViewConfig {
             options?.rating = value
             options?.update()
         }else {
-            let newOptions = MediaOptions(mediaId: media.type.id, isFavorite: false, watchList: false, name: media.title, rating: value, type: media.type.type, subTitle: media.subTitle ?? "")
+            let newOptions = MediaOptions(mediaId: media.type.mediaId, isFavorite: false, watchList: false, name: media.title, rating: value, type: media.type.type, subTitle: media.subTitle ?? "")
             newOptions.save()
             options = newOptions
         }

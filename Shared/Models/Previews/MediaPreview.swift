@@ -16,7 +16,7 @@ struct MediaPreview: Identifiable, Equatable, Hashable {
     var subTitle: String?
     var type: PreviewType
 //MARK: - Types
-    enum PreviewType: Equatable, Hashable {
+    enum PreviewType: Equatable, Hashable, Identifiable {
         case movie(id: Int)
         case tvShow(id: Int)
         case person(id: Int)
@@ -30,7 +30,7 @@ struct MediaPreview: Identifiable, Equatable, Hashable {
                     return .person
             }
         }
-        var id: Int {
+        var mediaId: Int {
             switch self {
                 case .movie(let mediaID), .tvShow(let mediaID), .person(let mediaID):
                     return mediaID
@@ -44,6 +44,22 @@ struct MediaPreview: Identifiable, Equatable, Hashable {
                     return "theatermasks.fill"
                 case .tvShow:
                     return "tv.fill"
+            }
+        }
+        var id: String {
+            return image + String(mediaId)
+        }
+        init?(type: String, id: Int) {
+            let type = MediaType(rawValue: type)
+            switch type {
+                case .movie:
+                    self = .movie(id: id)
+                case .tv:
+                    self = .tvShow(id: id)
+                case .person:
+                    self = .person(id: id)
+                default:
+                    return nil
             }
         }
     }
