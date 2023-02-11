@@ -9,19 +9,18 @@ import SwiftUI
 import STools
 import WatchedItModels
 
-struct ConfirmPasswordViewContainer: View {
-    @State var detents: Set<PresentationDetent> = [.medium]
+struct ActionsView: View {
+    @State var detents: Set<PresentationDetent> = [.height(300)]
     @Environment(\.dismiss) var dismiss
-    @State var config: ConfirmPasswordViewConfig
-    init(credentials: UserCredentials) {
-        _config = State(initialValue: ConfirmPasswordViewConfig(credentials: credentials))
+    @State var config: ActionsViewConfig
+    init(credentials: UserCredentials? = nil, page: ActionsViewConfig.Page) {
+        _config = State(initialValue: ActionsViewConfig(page: page, credentials: credentials))
     }
     var body: some View {
         VStack(spacing: 10) {
             VStack(spacing: 0) {
                 HStack {
                     Text(config.page.title)
-                        .foregroundColor(.white)
                         .font(.title3)
                         .fontWeight(.semibold)
                     Spacer()
@@ -40,8 +39,10 @@ struct ConfirmPasswordViewContainer: View {
             Group {
                 if config.page == .confirm {
                     ConfirmPasswordView(config: $config)
-                }else {
-                    OTPView(email: config.credentials.email, detents: $detents)
+                }else if config.page == .otp {
+                    OTPView(email: config.credentials?.email ?? config.email, detents: $detents)
+                }else if config.page == .reset {
+                    ForgetPasswordView(config: $config)
                 }
             }.padding(.bottom, 20)
             .transition(.slide)

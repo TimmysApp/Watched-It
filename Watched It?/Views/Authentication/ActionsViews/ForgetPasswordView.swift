@@ -1,29 +1,28 @@
 //
-//  ConfirmPasswordVieww.swift
+//  ForgetPasswordView.swift
 //  Watched It?
 //
-//  Created by Joe Maghzal on 09/02/2023.
+//  Created by Joe Maghzal on 11/02/2023.
 //
 
 import SwiftUI
-import STools
 
-struct ConfirmPasswordView: View {
+struct ForgetPasswordView: View {
     @FocusState var isFocused
-    @Binding var config: ConfirmPasswordViewConfig
+    @Binding var config: ActionsViewConfig
     var body: some View {
         VStack {
-            Text("You need to confirm the password you entered in the previous page before proceeding!")
+            Text("In order to reset your password, you need to verify your email first!")
                 .lineLimit(nil)
                 .multilineTextAlignment(.leading)
                 .font(.callout)
                 .fontWeight(.light)
-//            Spacer()
-            SecureTextField("Confirm Password", text: $config.password)
+            Spacer()
+            TextField("Email", text: $config.email)
                 .focused($isFocused)
                 .fontWeight(.medium)
                 .alignment(edge: .leading, spacing: 10) {
-                    Image(systemName: "lock.fill")
+                    Text("@")
                         .fontWeight(.semibold)
                         .opacity(0.5)
                 }.padding()
@@ -31,10 +30,10 @@ struct ConfirmPasswordView: View {
                 .overlay(RoundedRectangle(cornerRadius: 12, style: .continuous).stroke(.gray, lineWidth: 2))
                 .padding(.horizontal, 2)
                 .padding(.horizontal, 20)
-//            Spacer()
+            Spacer()
             Button(action: {
                 Task {
-                    await config.signUp()
+                    await config.resetPassword()
                 }
             }) {
                 Text("Continue")
@@ -45,8 +44,10 @@ struct ConfirmPasswordView: View {
                     .frame(height: 45)
                     .background(Color.accentColor)
                     .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
-            }.disabled(!config.isValid)
-                .opacity(config.isValid ? 1: 0.5)
+            }.disabled(config.email.isEmpty)
+                .opacity(config.email.isEmpty ? 1: 0.5)
+        }.onAppear {
+            isFocused = true
         }
     }
 }

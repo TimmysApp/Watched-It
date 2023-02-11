@@ -16,13 +16,13 @@ struct RootView: View {
         TabView(selection: $config.selectedTab) {
             ForEach(RootTab.allCases) { tab in
                 tab.view
-                    .tabItem {
-                        Text(tab.title)
-                        Image(systemName: tab.icon)
-                    }.tag(tab)
+                    .toolbar(.hidden, for: .tabBar)
+                    .tag(tab)
             }
         }.accentColor(.tint)
-        .fullScreenCover(item: $link) { item in
+        .overlay(alignment: .bottom) {
+            TabBarView(selection: $config.selectedTab)
+        }.fullScreenCover(item: $link) { item in
             LinkView(link: item)
         }
     }

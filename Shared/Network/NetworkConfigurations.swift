@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import WatchedItModels
 import NetworkUI
 
 class NetworkLayer: NetworkConfigurations {
@@ -39,8 +40,9 @@ struct ErrorData: Errorable {
     }
     var message: String?
     var summary: String?
+    var action: Actions?
     enum CodingKeys: CodingKey {
-        case message, summary
+        case message, summary, action
     }
 }
 
