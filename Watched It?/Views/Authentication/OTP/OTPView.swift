@@ -35,21 +35,16 @@ struct OTPView: View {
                         .multilineTextAlignment(.center)
                         .padding(.top, 30)
                         .opacity(0.65)
-                        HStack(spacing: 10) {
-                            ForEach(0..<6) { _ in
-                                TextField("", text: .constant("1"))
-                                    .multilineTextAlignment(.center)
-                                    .frame(width: (screenWidth - 110)/6, height: (screenWidth - 110)/6)
-                                    .background(Color.basic.opacity(0.3))
-                                    .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
-                            }
-                        }.padding(.horizontal, 30)
-                        .padding(.top, 50)
+                        OTPFieldView(code: $config.code, error: config.error)
+                            .padding(.horizontal, 30)
+                            .padding(.top, 50)
                         HStack(spacing: 5) {
                             Text("Didn't receive any email?")
                                 .font(.callout)
                             Button(action: {
-                                
+                                Task {
+                                    await config.resendCode(email: email)
+                                }
                             }) {
                                 Text("Resend")
                                     .font(.callout)
@@ -60,7 +55,9 @@ struct OTPView: View {
                 }.disabledBounce()
                 Spacer()
                 Button(action: {
-                    
+                    Task {
+                        await config.verifyCode(email: email)
+                    }
                 }) {
                     Text("Submit")
                         .foregroundColor(.white)
@@ -70,8 +67,8 @@ struct OTPView: View {
                         .background(Color.accentColor.opacity(0.7))
                         .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
                         .shadow(color: .darkShadow, radius: 6, y: 6)
-                }.disabled(true)
-                    .padding(.horizontal, 20)
+                }.disabled(config.code.count < 6)
+                .padding(.horizontal, 20)
             }.transition(.push(from: .bottom))
                 .hidden(!config.received)
             VStack(spacing: 10) {
@@ -86,13 +83,15 @@ struct OTPView: View {
                     .fontWeight(.medium))
                 .accentColor(.red)
                 .multilineTextAlignment(.center)
-                .opacity(0.6)
+                .opacity(0.7)
                 Spacer()
                 HStack(spacing: 5) {
                     Text("Didn't receive any email?")
                         .font(.callout)
                     Button(action: {
-                        
+                        Task {
+                            await config.resendCode(email: email)
+                        }
                     }) {
                         Text("Resend")
                             .font(.callout)
@@ -118,6 +117,12 @@ struct OTPView: View {
             Task {
                 try? await Task.sleep(nanoseconds: 5_000_000)
                 config.received = true
+            }
+        }.onChange(of: config.error) { newValue in
+            guard newValue == false else {return}
+            Task {
+                try? await Task.sleep(nanoseconds: 1_005_000_000)
+                dismiss.callAsFunction()
             }
         }
     }

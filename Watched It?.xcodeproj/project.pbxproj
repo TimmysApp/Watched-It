@@ -66,9 +66,12 @@
 		1952D89E298682D600398216 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1952D89D298682D600398216 /* Constants.swift */; };
 		1952D8A329868FDB00398216 /* MediaOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1952D8A229868FDB00398216 /* MediaOptions.swift */; };
 		1952D8A52986911400398216 /* MediaType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1952D8A42986911400398216 /* MediaType.swift */; };
+		1957CBFD29979C88006CAAE4 /* OTPTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1957CBFC29979C88006CAAE4 /* OTPTextFieldView.swift */; };
+		1957CBFF2997BA98006CAAE4 /* ForgetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1957CBFE2997BA98006CAAE4 /* ForgetPasswordView.swift */; };
 		196C0DF32975CC0600D6FC9B /* TVShowRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196C0DF22975CC0600D6FC9B /* TVShowRoute.swift */; };
 		196C0DF52975CC5800D6FC9B /* TVShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196C0DF42975CC5800D6FC9B /* TVShowView.swift */; };
 		196C0DF82975CC7300D6FC9B /* TVShowViewConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196C0DF72975CC7300D6FC9B /* TVShowViewConfig.swift */; };
+		197D569F2997CD03003C106F /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197D569E2997CD03003C106F /* TabBarView.swift */; };
 		1984DF94296C9C81003E5AD1 /* DataStruct in Frameworks */ = {isa = PBXBuildFile; productRef = 1984DF93296C9C81003E5AD1 /* DataStruct */; };
 		1984DF97296C9C92003E5AD1 /* MediaUI in Frameworks */ = {isa = PBXBuildFile; productRef = 1984DF96296C9C92003E5AD1 /* MediaUI */; };
 		1984DF9A296C9CD8003E5AD1 /* RootViewConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1984DF99296C9CD8003E5AD1 /* RootViewConfig.swift */; };
@@ -87,11 +90,11 @@
 		1988D7E0296C9AF30078EE91 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1988D7DF296C9AF30078EE91 /* Preview Assets.xcassets */; };
 		1988D7E2296C9AF30078EE91 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1988D7E1296C9AF30078EE91 /* Persistence.swift */; };
 		1988D7E5296C9AF30078EE91 /* Watched_It_.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1988D7E3296C9AF30078EE91 /* Watched_It_.xcdatamodeld */; };
-		198E08C229953C8100CD6FAB /* ConfirmPasswordViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198E08C129953C8100CD6FAB /* ConfirmPasswordViewContainer.swift */; };
-		198E08C629953D2600CD6FAB /* ConfirmPasswordViewConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198E08C529953D2600CD6FAB /* ConfirmPasswordViewConfig.swift */; };
+		198E08C229953C8100CD6FAB /* ActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198E08C129953C8100CD6FAB /* ActionsView.swift */; };
+		198E08C629953D2600CD6FAB /* ActionsViewConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198E08C529953D2600CD6FAB /* ActionsViewConfig.swift */; };
 		198E08C8299545C200CD6FAB /* ConfirmPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198E08C7299545C200CD6FAB /* ConfirmPasswordView.swift */; };
 		198E08CA29954B9A00CD6FAB /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198E08C929954B9A00CD6FAB /* SliderView.swift */; };
-		198E08CC2995670D00CD6FAB /* OTPTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198E08CB2995670D00CD6FAB /* OTPTextFieldView.swift */; };
+		198E08CC2995670D00CD6FAB /* OTPFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198E08CB2995670D00CD6FAB /* OTPFieldView.swift */; };
 		199EEA442974472A00B49975 /* SlidingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199EEA432974472A00B49975 /* SlidingImageView.swift */; };
 		199EEA462974474D00B49975 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199EEA452974474D00B49975 /* Extensions.swift */; };
 		199EEA482974769E00B49975 /* PrefrencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199EEA472974769D00B49975 /* PrefrencesView.swift */; };
@@ -205,9 +208,12 @@
 		1952D89D298682D600398216 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1952D8A229868FDB00398216 /* MediaOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaOptions.swift; sourceTree = "<group>"; };
 		1952D8A42986911400398216 /* MediaType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaType.swift; sourceTree = "<group>"; };
+		1957CBFC29979C88006CAAE4 /* OTPTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPTextFieldView.swift; sourceTree = "<group>"; };
+		1957CBFE2997BA98006CAAE4 /* ForgetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordView.swift; sourceTree = "<group>"; };
 		196C0DF22975CC0600D6FC9B /* TVShowRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowRoute.swift; sourceTree = "<group>"; };
 		196C0DF42975CC5800D6FC9B /* TVShowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowView.swift; sourceTree = "<group>"; };
 		196C0DF72975CC7300D6FC9B /* TVShowViewConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowViewConfig.swift; sourceTree = "<group>"; };
+		197D569E2997CD03003C106F /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		1984DF99296C9CD8003E5AD1 /* RootViewConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewConfig.swift; sourceTree = "<group>"; };
 		1984DF9B296C9E4F003E5AD1 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		1984DF9E296C9EA9003E5AD1 /* IdentifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifyView.swift; sourceTree = "<group>"; };
@@ -226,11 +232,11 @@
 		1988D7E1296C9AF30078EE91 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		1988D7E4296C9AF30078EE91 /* Watched_It_.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Watched_It_.xcdatamodel; sourceTree = "<group>"; };
 		1988D7E6296C9AF30078EE91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		198E08C129953C8100CD6FAB /* ConfirmPasswordViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPasswordViewContainer.swift; sourceTree = "<group>"; };
-		198E08C529953D2600CD6FAB /* ConfirmPasswordViewConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPasswordViewConfig.swift; sourceTree = "<group>"; };
+		198E08C129953C8100CD6FAB /* ActionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsView.swift; sourceTree = "<group>"; };
+		198E08C529953D2600CD6FAB /* ActionsViewConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsViewConfig.swift; sourceTree = "<group>"; };
 		198E08C7299545C200CD6FAB /* ConfirmPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPasswordView.swift; sourceTree = "<group>"; };
 		198E08C929954B9A00CD6FAB /* SliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
-		198E08CB2995670D00CD6FAB /* OTPTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPTextFieldView.swift; sourceTree = "<group>"; };
+		198E08CB2995670D00CD6FAB /* OTPFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPFieldView.swift; sourceTree = "<group>"; };
 		199EEA432974472A00B49975 /* SlidingImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidingImageView.swift; sourceTree = "<group>"; };
 		199EEA452974474D00B49975 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		199EEA472974769D00B49975 /* PrefrencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefrencesView.swift; sourceTree = "<group>"; };
@@ -433,6 +439,7 @@
 				192639AB298EB8FD00E6F68F /* SecureTextField.swift */,
 				192639AD298EB98900E6F68F /* ExpandableView.swift */,
 				198E08C929954B9A00CD6FAB /* SliderView.swift */,
+				1957CBFC29979C88006CAAE4 /* OTPTextFieldView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -442,7 +449,8 @@
 			children = (
 				192639A2298EB85B00E6F68F /* CirclesView.swift */,
 				192639A5298EB8A500E6F68F /* AuthenticationView.swift */,
-				198E08C429953D0C00CD6FAB /* ConfirmPassword */,
+				1957CC002997BA9C006CAAE4 /* ActionsViews */,
+				198E08C429953D0C00CD6FAB /* ActionsView */,
 				194ED133298FEA8F00CC9E5B /* SignIn */,
 				194ED130298FEA5300CC9E5B /* SignUp */,
 				192639B5298FC55000E6F68F /* OTP */,
@@ -455,7 +463,7 @@
 			children = (
 				192639B1298EDFF500E6F68F /* OTPView.swift */,
 				192639B3298FC54500E6F68F /* OTPConfig.swift */,
-				198E08CB2995670D00CD6FAB /* OTPTextFieldView.swift */,
+				198E08CB2995670D00CD6FAB /* OTPFieldView.swift */,
 			);
 			path = OTP;
 			sourceTree = "<group>";
@@ -478,6 +486,15 @@
 			path = SignIn;
 			sourceTree = "<group>";
 		};
+		1957CC002997BA9C006CAAE4 /* ActionsViews */ = {
+			isa = PBXGroup;
+			children = (
+				1957CBFE2997BA98006CAAE4 /* ForgetPasswordView.swift */,
+				198E08C7299545C200CD6FAB /* ConfirmPasswordView.swift */,
+			);
+			path = ActionsViews;
+			sourceTree = "<group>";
+		};
 		196C0DF62975CC5E00D6FC9B /* TVShowView */ = {
 			isa = PBXGroup;
 			children = (
@@ -492,6 +509,7 @@
 			children = (
 				1988D7DA296C9AF20078EE91 /* RootView.swift */,
 				1984DF99296C9CD8003E5AD1 /* RootViewConfig.swift */,
+				197D569E2997CD03003C106F /* TabBarView.swift */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -635,14 +653,13 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
-		198E08C429953D0C00CD6FAB /* ConfirmPassword */ = {
+		198E08C429953D0C00CD6FAB /* ActionsView */ = {
 			isa = PBXGroup;
 			children = (
-				198E08C129953C8100CD6FAB /* ConfirmPasswordViewContainer.swift */,
-				198E08C529953D2600CD6FAB /* ConfirmPasswordViewConfig.swift */,
-				198E08C7299545C200CD6FAB /* ConfirmPasswordView.swift */,
+				198E08C129953C8100CD6FAB /* ActionsView.swift */,
+				198E08C529953D2600CD6FAB /* ActionsViewConfig.swift */,
 			);
-			path = ConfirmPassword;
+			path = ActionsView;
 			sourceTree = "<group>";
 		};
 		199EEA492974798300B49975 /* Prefrences */ = {
@@ -885,7 +902,7 @@
 				190969342971D56400BCBEB0 /* SearchRoute.swift in Sources */,
 				198E08CA29954B9A00CD6FAB /* SliderView.swift in Sources */,
 				1952D89E298682D600398216 /* Constants.swift in Sources */,
-				198E08C629953D2600CD6FAB /* ConfirmPasswordViewConfig.swift in Sources */,
+				198E08C629953D2600CD6FAB /* ActionsViewConfig.swift in Sources */,
 				191D2AE2296F352E0011021D /* DiscoverViewConfig.swift in Sources */,
 				1900D688297BF49100F1D51A /* ReviewsView.swift in Sources */,
 				1900D698297BFF7900F1D51A /* PersonViewConfig.swift in Sources */,
@@ -896,6 +913,7 @@
 				1909693F2972A8AA00BCBEB0 /* SpokenLanguage.swift in Sources */,
 				194811A229781A1600539F95 /* OptionsView.swift in Sources */,
 				19FD0910296DDB6200983DE1 /* RecentsView.swift in Sources */,
+				1957CBFD29979C88006CAAE4 /* OTPTextFieldView.swift in Sources */,
 				1984DF9F296C9EA9003E5AD1 /* IdentifyView.swift in Sources */,
 				1900D68D297BF95700F1D51A /* ReviewsCellView.swift in Sources */,
 				1984DFB0296D9D8C003E5AD1 /* Cropper.swift in Sources */,
@@ -903,6 +921,7 @@
 				1900D686297BF0EB00F1D51A /* CollidingBublesScene.swift in Sources */,
 				1909694B2972AE4A00BCBEB0 /* Credits.swift in Sources */,
 				1909693B2972A35700BCBEB0 /* Movie.swift in Sources */,
+				197D569F2997CD03003C106F /* TabBarView.swift in Sources */,
 				19E9BC2C29741B6B003DAFD4 /* CreditsCellView.swift in Sources */,
 				1952D8A52986911400398216 /* MediaType.swift in Sources */,
 				192639B4298FC54500E6F68F /* OTPConfig.swift in Sources */,
@@ -911,7 +930,7 @@
 				19220527298FE2420050B8B7 /* AuthenticationRoute.swift in Sources */,
 				19B0C1BA2985A78A00B79CFB /* MovieInfo.swift in Sources */,
 				1900D693297BFE7700F1D51A /* Person.swift in Sources */,
-				198E08C229953C8100CD6FAB /* ConfirmPasswordViewContainer.swift in Sources */,
+				198E08C229953C8100CD6FAB /* ActionsView.swift in Sources */,
 				191D2AE0296F349C0011021D /* SearchBarView.swift in Sources */,
 				196C0DF32975CC0600D6FC9B /* TVShowRoute.swift in Sources */,
 				1900D68F297BFA9D00F1D51A /* CollabsableTextView.swift in Sources */,
@@ -939,8 +958,9 @@
 				19E9BC27297418CE003DAFD4 /* MediaPreview.swift in Sources */,
 				1909693D2972A89A00BCBEB0 /* Status.swift in Sources */,
 				1900D691297BFB7800F1D51A /* ConfigurableRoundedRectangle.swift in Sources */,
-				198E08CC2995670D00CD6FAB /* OTPTextFieldView.swift in Sources */,
+				198E08CC2995670D00CD6FAB /* OTPFieldView.swift in Sources */,
 				190969412972A8BA00BCBEB0 /* ProductionCountry.swift in Sources */,
+				1957CBFF2997BA98006CAAE4 /* ForgetPasswordView.swift in Sources */,
 				190969392972A07C00BCBEB0 /* DiscoveryRoute.swift in Sources */,
 				198E08C8299545C200CD6FAB /* ConfirmPasswordView.swift in Sources */,
 				19E9BC1D29740084003DAFD4 /* YouTubeView.swift in Sources */,

@@ -27,16 +27,13 @@ struct WatchedIt: App {
     }
 //MARK: - Functions
     func setUp() {
-        let tabBarAppearance = UITabBarAppearance()
-        tabBarAppearance.configureWithDefaultBackground()
-        UITabBar.appearance().standardAppearance = tabBarAppearance
-        UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
+        UITabBar.appearance().isHidden = true
         let navigationBarAppearance = UINavigationBarAppearance()
         navigationBarAppearance.configureWithDefaultBackground()
         UINavigationBar.appearance().compactScrollEdgeAppearance = navigationBarAppearance
         let toolBarAppearance = UIToolbarAppearance()
         toolBarAppearance.configureWithDefaultBackground()
-        UIToolbar.appearance().scrollEdgeAppearance = toolBarAppearance
+        UIToolbar.appearance().isHidden = true
         UITextView.appearance().backgroundColor = .clear
         DataConfigurations.setObjectContext(PersistenceController.shared.container.viewContext)
         Network.set(configurations: NetworkLayer())

@@ -20,6 +20,7 @@ struct SignUpViewConfig {
     var validations = [Validations]()
     var loadingEmail = false
     var credentials: UserCredentials?
+    var usedEmails = [String]()
 //MARK: - Mappings
     var isValid: Bool {
         return validFields.count == 3
@@ -36,6 +37,9 @@ struct SignUpViewConfig {
                 if !email.isValidEmail {
                     validations.append(.invalidEmail)
                 }
+                if usedEmails.contains(email) {
+                    validations.append(.emailInUse)
+                }
             case .name:
                 if name.isEmpty {
                     validations.append(.emptyName)
@@ -44,10 +48,13 @@ struct SignUpViewConfig {
                 if password.isEmpty {
                     validations.append(.emptyPassword)
                 }
+                if !password.isValidPassword {
+                    validations.append(.invalidPassword)
+                }
         }
         guard !validations.contains(where: {$0.field == field}) && !validFields.contains(field) else {return}
         validFields.append(field)
-    }//"^(?=.*[A-Za-z])(?=.*\\d)(?=.*[$@$!%*#?&])[A-Za-z\\d$@$!%*#?&]{8,}$"
+    }
     mutating func signUp() {
         credentials = UserCredentials(email: email, password: password, device: "")
     }
@@ -60,6 +67,7 @@ struct SignUpViewConfig {
                 .map({$0 == .ok})
                 .get()
             if !success {
+                usedEmails.append(email)
                 validations.append(.emailInUse)
             }
             loadingEmail = false
