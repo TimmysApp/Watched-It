@@ -32,6 +32,18 @@ class NetworkLayer: NetworkConfigurations {
 class ErrorLayer: ErrorConfigurations {
 }
 
+struct ErrorData: Errorable {
+    var id = UUID()
+    var networkError: NetworkError {
+        NetworkError(title: message, body: summary)
+    }
+    var message: String?
+    var summary: String?
+    enum CodingKeys: CodingKey {
+        case message, summary
+    }
+}
+
 class JSONDateFormatter: DateFormatter {
     var dateFormatter: DateFormatter {
         let dateFormatter = DateFormatter()

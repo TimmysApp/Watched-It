@@ -55,6 +55,15 @@
       }
     },
     {
+      "identity" : "watched-it-models",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/TimmysApp/Watched-It-Models",
+      "state" : {
+        "branch" : "main",
+        "revision" : "0c635ddecdaff27f429bde76393ba5c9b12d3372"
+      }
+    },
+    {
       "identity" : "youtubeplayerkit",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/SvenTiigi/YouTubePlayerKit",

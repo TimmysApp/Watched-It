@@ -8,9 +8,27 @@
 import SwiftUI
 
 struct PrefrencesView: View {
+    @State var presentLogin = false
     var body: some View {
         NavigationStack {
             List {
+                Button(action: {
+                    presentLogin.toggle()
+                }) {
+                    HStack {
+                        Image(systemName: "person.fill")
+                            .font(.title2.weight(.medium))
+                            .foregroundColor(.white)
+                            .padding(4)
+                            .frame(width: 30, height: 30)
+                            .clipShape(RoundedRectangle(cornerRadius: 7, style: .continuous))
+                        Text("Sign In")
+                            .foregroundColor(.white)
+                            .fontWeight(.semibold)
+                        Spacer()
+                    }.shadow(radius: 8)
+                }.listRowBackground(Color.accentColor.opacity(0.4))
+                .listRowInsets(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
                 ForEach(PrefrenceItem.sections) { section in
                     Section(section.title) {
                         ForEach(section.items) { item in
@@ -29,26 +47,33 @@ struct PrefrencesView: View {
                                 }
                             }
                         }.listRowBackground(Color.basic.opacity(0.5))
+                        .listRowInsets(EdgeInsets(top: 10, leading: 5, bottom: 10, trailing: 10))
                     }
                 }
             }.listStyle(.insetGrouped)
             .scrollContentBackground(.hidden)
             .background(Color.background.gradient)
-            .navigationTitle(Text("Prefrences"))
+            .fullScreenCover(isPresented: $presentLogin) {
+                AuthenticationView()
+            }.navigationTitle(Text("Prefrences"))
         }
     }
 }
 
+struct PrefrencesView_Preview: PreviewProvider {
+    static var previews: some View {
+        PrefrencesView()
+    }
+}
+
 enum PrefrenceItem: Int, Identifiable, CaseIterable, Hashable {
-    case account, app, other, styling, privacy, about, termsConditions, privacyPolicy
+    case app, other, styling, privacy, about, termsConditions, privacyPolicy
     var id: Int {
         return rawValue
     }
-    static let sections: [Self] = [.account, .app, .other]
+    static let sections: [Self] = [.app, .other]
     var title: String {
         switch self {
-            case .account:
-                return "Account"
             case .app:
                 return "App"
             case .other:
@@ -99,8 +124,6 @@ enum PrefrenceItem: Int, Identifiable, CaseIterable, Hashable {
     }
     var items: [Self] {
         switch self {
-            case .account:
-                return []
             case .app:
                 return [.styling, .privacy, .about]
             case .other:

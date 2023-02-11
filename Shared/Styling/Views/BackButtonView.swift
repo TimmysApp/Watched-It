@@ -9,19 +9,23 @@ import SwiftUI
 import NetworkUI
 
 struct BackButtonView: View {
+    private var closeStyle = false
     @Environment(\.dismiss) var dismiss
     var body: some View {
         Button(action: {
             NetworkData.shared.isLoading = false
             dismiss.callAsFunction()
         }) {
-            Image(systemName: "chevron.left")
-                .font(.title3.weight(.semibold))
+            Image(systemName: closeStyle ? "xmark": "chevron.left")
+                .fontWeight(.semibold)
                 .frame(width: 35, height: 35)
                 .background(Color.basic.opacity(0.5))
                 .compositingGroup()
                 .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
                 .shadow(color: .darkShadow, radius: 6)
         }
+    }
+    func closingStyle() -> Self {
+        return BackButtonView(closeStyle: true)
     }
 }

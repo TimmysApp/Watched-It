@@ -45,10 +45,7 @@ enum TVShowRoute: EndPoint {
     }
     
     var method: RequestMethod {
-        return .get
-    }
-    var body: JSON? {
-        return nil
+        return .GET
     }
     var id: String {
         switch self {

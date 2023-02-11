@@ -8,9 +8,12 @@
 import SwiftUI
 import DataStruct
 import NetworkUI
+import PhotosUI
+import Combine
 
 @main
 struct WatchedIt: App {
+    static let storage = AppStorage()
     @State var link: MediaPreview.PreviewType?
     init() {
        setUp()

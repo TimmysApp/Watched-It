@@ -37,7 +37,17 @@ struct SearchResultsViewConfig {
         currentPage = currentPage + 1
         do {
             let route = type?.route(for: searchText, adult: adult, page: currentPage) ?? SearchRoute.multi(page: currentPage, searchText: searchText, adult: adult)
-            currentTask = try await Network.task(for: route, model: PageableResponse<SearchData>.self, handled: false, withLoader: false)
+            if let route = type?.route(for: searchText, adult: adult, page: currentPage) {
+//                currentTask = try await Network.request(for: route)
+//                    .tryDecode(using: PageableResponse<SearchData>.self)
+//                    .handling(.error)
+//                    .task()
+            }else {
+                currentTask = try await Network.request(for: SearchRoute.multi(page: currentPage, searchText: searchText, adult: adult))
+                    .tryDecode(using: PageableResponse<SearchData>.self)
+                    .handling(.error)//.none
+                    .task()
+            }
             if let data = try await currentTask?.value {
                 if currentPage == 1 {
                     searchResults = data.results

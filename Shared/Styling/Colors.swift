@@ -16,4 +16,5 @@ extension Color {
     static let darkShadow = Color("DarkShadow")
     static let coloredShadow = Color("ColoredShadow")
     static let sheetBackground = Color("SheetBackground")
+    static let link = Color("Link")
 }

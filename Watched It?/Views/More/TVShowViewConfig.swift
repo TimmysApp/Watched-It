@@ -22,10 +22,23 @@ struct TVShowViewConfig {
         NetworkData.shared.isLoading = true
         do {
             let tvShowID = id
-            async let tvShowData = Network.request(for: TVShowRoute.details(id: tvShowID), model: TVShow.self, withLoader: false)
-            async let recomendationsData = Network.request(for: TVShowRoute.recomendations(id: tvShowID), model: PageableResponse<MediaDetails>.self, withLoader: false).results.map(\.preview)
-            async let creditsData = Network.request(for: TVShowRoute.credits(id: tvShowID), model: Credits.self, withLoader: false)
-            async let videosData = Network.request(for: TVShowRoute.videos(id: tvShowID), model: Videos.self, withLoader: false)
+            async let tvShowData = Network.request(for: TVShowRoute.details(id: tvShowID))
+                .tryDecode(using: TVShow.self)
+                .handling(.error)
+                .get()
+            async let recomendationsData = Network.request(for: TVShowRoute.recomendations(id: tvShowID))
+                .tryDecode(using: PageableResponse<MediaDetails>.self)
+                .handling(.error)
+                .get()
+                .results.map(\.preview)
+            async let creditsData = Network.request(for: TVShowRoute.credits(id: tvShowID))
+                .tryDecode(using: Credits.self)
+                .handling(.error)
+                .get()
+            async let videosData = Network.request(for: TVShowRoute.videos(id: tvShowID))
+                .tryDecode(using: Videos.self)
+                .handling(.error)
+                .get()
             tvShow = try await tvShowData
             recomendations = try await recomendationsData
             credits = try await creditsData

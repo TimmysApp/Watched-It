@@ -32,10 +32,7 @@ enum SearchRoute: EndPoint {
     }
     
     var method: RequestMethod {
-        return .get
-    }
-    var body: JSON? {
-        return nil
+        return .GET
     }
     var page: Int {
         switch self {

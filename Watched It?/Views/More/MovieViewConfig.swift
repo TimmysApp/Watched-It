@@ -22,10 +22,24 @@ struct MovieViewConfig {
         NetworkData.shared.isLoading = true
         do {
             let movieID = id
-            async let movieData = Network.request(for: MovieRoute.details(id: movieID), model: Movie.self, withLoader: false)
-            async let recomendationsData = Network.request(for: MovieRoute.recomendations(id: movieID), model: PageableResponse<MediaDetails>.self, withLoader: false).results.map(\.preview)
-            async let creditsData = Network.request(for: MovieRoute.credits(id: movieID), model: Credits.self, withLoader: false)
-            async let videosData = Network.request(for: MovieRoute.videos(id: movieID), model: Videos.self, withLoader: false)
+            async let movieData = Network.request(for: MovieRoute.details(id: movieID))
+                .tryDecode(using: Movie.self)
+                .handling(.error)
+                .get()
+            async let recomendationsData = Network.request(for: MovieRoute.recomendations(id: movieID))
+                .tryDecode(using: PageableResponse<MediaDetails>.self)
+                .handling(.error)
+                .get()
+                .results.map(\.preview)
+            
+            async let creditsData = Network.request(for: MovieRoute.credits(id: movieID))
+                .tryDecode(using: Credits.self)
+                .handling(.error)
+                .get()
+            async let videosData = Network.request(for: MovieRoute.videos(id: movieID))
+                .tryDecode(using: Videos.self)
+                .handling(.error)
+                .get()
             movie = try await movieData
             recomendations = try await recomendationsData
             credits = try await creditsData

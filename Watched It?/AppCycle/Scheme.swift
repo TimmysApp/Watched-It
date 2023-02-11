@@ -12,7 +12,7 @@ enum Scheme {
     var url: String {
         switch self {
             case .debug:
-                return ""
+                return "http://127.0.0.1:8080/api/v1/"
             case .release:
                 return ""
         }
