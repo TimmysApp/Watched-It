@@ -1,0 +1,41 @@
+{
+  "pins" : [
+    {
+      "identity" : "networkui",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/TimmysApp/NetworkUI",
+      "state" : {
+        "branch" : "master",
+        "revision" : "c2d05f921e17182d66c788a01b4cf420b29cb71d"
+      }
+    },
+    {
+      "identity" : "nuke",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/kean/Nuke",
+      "state" : {
+        "revision" : "6241e100294a2aa70d1811641585ab7da780bd0f",
+        "version" : "12.0.0"
+      }
+    },
+    {
+      "identity" : "stools",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/TimmysApp/STools",
+      "state" : {
+        "branch" : "master",
+        "revision" : "ea876036fc53be40f564b24d3c267b447416dc1d"
+      }
+    },
+    {
+      "identity" : "watched-it-models",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/TimmysApp/Watched-It-Models",
+      "state" : {
+        "branch" : "main",
+        "revision" : "4471a6cf13e6b6e0f45522c1b2d1efb25430f584"
+      }
+    }
+  ],
+  "version" : 2
+}

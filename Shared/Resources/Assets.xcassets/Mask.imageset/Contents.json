@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "acrylic-ink-water-color-explosion-paint-texture-acrylic-ink-water-paint-texture-color-explosion-panorama-158001550.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
